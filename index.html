@@ -10,9 +10,9 @@
 
 <body>
     <div class="container">
-        <div class="player-panel">
-            <div class="player-switch"><button class="player-toggle active" data-player="p1">1p</button><button
-                    class="player-toggle" data-player="p2">2p</button></div>
+        <div class="player-switch-panel"><button class="player-toggle active" data-player="p1">1p</button><button
+                class="player-toggle" data-player="p2">2p</button></div>
+        <div class="player-purchase-panel">
             <div class="player-result-row"><span>1p 구매: <span id="p1Purchase">0$</span></span><span>2p 구매: <span
                         id="p2Purchase">0$</span></span><span>2p 추가점수: <span id="p2Bonus">1500점</span></span></div>
             <table class="dollar-table player-dollar-table">
@@ -87,235 +87,253 @@
         </div>
         <div class="score-box score-panel">최종점수: <span id="finalScore">0점</span><br>인게임 클리어 점수: <input id="ingameScore"
                 class="score-input" type="number" value="0">점<br>1번 항목: <span id="itemOneScore">0점</span><br>획득 유물 개수:
-            <input id="artifactCount" class="score-input" type="number" value="0"><br><br>2번 항목: <span
-                id="score">0점</span></div>
-        <table class="score-table top-table">
-            <thead>
-                <tr>
-                    <th class="row-header"></th>
-                    <th><button class="table-button base-button active" disabled>기본</button></th>
-                    <th><button class="table-button select-button" data-group="top" data-key="a">완</button></th>
-                    <th><button class="table-button select-button" data-group="top" data-key="b"><img src="images/망.png"
-                                alt="망"></button></th>
-                    <th><button class="table-button select-button" data-group="top" data-key="c"><img src="images/무.png"
-                                alt="무"></button></th>
-                    <th><button class="table-button select-button" data-group="top" data-key="d"><img src="images/흑.png"
-                                alt="흑"></button></th>
-                    <th><button class="table-button select-button" data-group="top" data-key="f"><img src="images/의.png"
-                                alt="의"></button></th>
-                    <th><button class="table-button select-button" data-group="top" data-key="g"><img src="images/식.png"
-                                alt="식"></button></th>
-                    <th class="total-header">합계</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr data-group="top" data-row="1">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="top"
-                            data-row="1" title="1-1"><img src="images/1.png" alt="1-1"></button></td>
-                    <td class="score-cell" data-group="top" data-row="1" data-score="base">-50</td>
-                    <td class="score-cell" data-group="top" data-row="1" data-score="a">+10</td>
-                    <td class="score-cell group-score" data-group="top" data-row="1" data-score="bcd" colspan="3">+40
-                    </td>
-                    <td class="score-cell group-score" data-group="top" data-row="1" data-score="fg" colspan="2">+100
-                    </td>
-                    <td class="total-cell" data-group="top" data-row-total="1">0점</td>
-                </tr>
-                <tr data-group="top" data-row="2">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="top"
-                            data-row="2" title="1-2"><img src="images/1.png" alt="1-2"></button></td>
-                    <td class="score-cell" data-group="top" data-row="2" data-score="base">+0</td>
-                    <td class="score-cell" data-group="top" data-row="2" data-score="a">+10</td>
-                    <td class="score-cell group-score" data-group="top" data-row="2" data-score="bc" colspan="2">+50
-                    </td>
-                    <td class="empty-cell"></td>
-                    <td class="score-cell group-score" data-group="top" data-row="2" data-score="fg" colspan="2">+100
-                    </td>
-                    <td class="total-cell" data-group="top" data-row-total="2">0점</td>
-                </tr>
-                <tr data-group="top" data-row="3">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="top"
-                            data-row="3" title="2-1"><img src="images/2.png" alt="2-1"></button></td>
-                    <td class="score-cell" data-group="top" data-row="3" data-score="base">+60</td>
-                    <td class="score-cell" data-group="top" data-row="3" data-score="a">+80</td>
-                    <td class="score-cell group-score" data-group="top" data-row="3" data-score="bcd" colspan="3">+120
-                    </td>
-                    <td class="score-cell group-score" data-group="top" data-row="3" data-score="fg" colspan="2">+100
-                    </td>
-                    <td class="total-cell" data-group="top" data-row-total="3">0점</td>
-                </tr>
-                <tr data-group="top" data-row="4">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="top"
-                            data-row="4" title="2-2"><img src="images/2.png" alt="2-2"></button></td>
-                    <td class="score-cell" data-group="top" data-row="4" data-score="base">+80</td>
-                    <td class="score-cell" data-group="top" data-row="4" data-score="a">+120</td>
-                    <td class="score-cell group-score" data-group="top" data-row="4" data-score="bc" colspan="2">+100
-                    </td>
-                    <td class="empty-cell"></td>
-                    <td class="score-cell group-score" data-group="top" data-row="4" data-score="fg" colspan="2">+100
-                    </td>
-                    <td class="total-cell" data-group="top" data-row-total="4">0점</td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="score-table middle-table">
-            <thead>
-                <tr>
-                    <th class="row-header"></th>
-                    <th><button class="table-button base-button active" disabled>기본</button></th>
-                    <th><button class="table-button select-button" data-group="bottom" data-key="a">완</button></th>
-                    <th><button class="table-button select-button" data-group="bottom" data-key="b"><img
-                                src="images/망.png" alt="망"></button></th>
-                    <th><button class="table-button select-button" data-group="bottom" data-key="c"><img
-                                src="images/무.png" alt="무"></button></th>
-                    <th><button class="table-button select-button" data-group="bottom" data-key="d"><img
-                                src="images/흑.png" alt="흑"></button></th>
-                    <th><button class="table-button select-button" data-group="bottom" data-key="f"><img
-                                src="images/의.png" alt="의"></button></th>
-                    <th><button class="table-button select-button" data-group="bottom" data-key="g"><img
-                                src="images/식.png" alt="식"></button></th>
-                    <th class="total-header">합계</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr data-group="bottom" data-row="5">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="bottom"
-                            data-row="5" title="3"><img src="images/3.png" alt="3"></button></td>
-                    <td class="score-cell" data-group="bottom" data-row="5" data-score="base">+80</td>
-                    <td class="score-cell" data-group="bottom" data-row="5" data-score="a">+160</td>
-                    <td class="empty-cell"></td>
-                    <td class="score-cell" data-group="bottom" data-row="5" data-score="c">+100</td>
-                    <td class="empty-cell"></td>
-                    <td class="score-cell group-score" data-group="bottom" data-row="5" data-score="fg" colspan="2">+100
-                    </td>
-                    <td class="total-cell" data-group="bottom" data-row-total="5">0점</td>
-                </tr>
-                <tr data-group="bottom" data-row="6">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="bottom"
-                            data-row="6" title="4"><img src="images/4.png" alt="4"></button></td>
-                    <td class="score-cell" data-group="bottom" data-row="6" data-score="base">+100</td>
-                    <td class="score-cell" data-group="bottom" data-row="6" data-score="a">+160</td>
-                    <td class="score-cell" data-group="bottom" data-row="6" data-score="b">+60</td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="score-cell group-score" data-group="bottom" data-row="6" data-score="fg" colspan="2">+100
-                    </td>
-                    <td class="total-cell" data-group="bottom" data-row-total="6">0점</td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="score-table five-table">
-            <thead>
-                <tr>
-                    <th class="row-header"></th>
-                    <th><button class="table-button base-button active" disabled>기본</button></th>
-                    <th><button class="table-button select-button" data-group="five" data-key="a">완</button></th>
-                    <th><button class="table-button select-button" data-group="five" data-key="b"><img
-                                src="images/망.png" alt="망"></button></th>
-                    <th><button class="table-button select-button" data-group="five" data-key="c"><img
-                                src="images/무.png" alt="무"></button></th>
-                    <th><button class="table-button select-button" data-group="five" data-key="d"><img
-                                src="images/흑.png" alt="흑"></button></th>
-                    <th><button class="table-button select-button" data-group="five" data-key="f"><img
-                                src="images/의.png" alt="의"></button></th>
-                    <th><button class="table-button select-button" data-group="five" data-key="g"><img
-                                src="images/식.png" alt="식"></button></th>
-                    <th class="total-header">합계</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr data-group="five" data-row="7">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="five"
-                            data-row="7" title="5"><img src="images/5.png" alt="5"></button></td>
-                    <td class="score-cell" data-group="five" data-row="7" data-score="base" data-any="0">+0</td>
-                    <td class="score-cell" data-group="five" data-row="7" data-score="a" data-any="20">+20</td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="total-cell" data-group="five" data-row-total="7">0점</td>
-                </tr>
-                <tr data-group="five" data-row="8">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="five"
-                            data-row="8" title="5-1"><img src="images/1.png" alt="5-1"></button></td>
-                    <td class="score-cell" data-group="five" data-row="8" data-score="base" data-a="60" data-b="20">+60
-                    </td>
-                    <td class="empty-cell"></td>
-                    <td class="score-cell" data-group="five" data-row="8" data-score="b" data-b="30"></td>
-                    <td class="score-cell" data-group="five" data-row="8" data-score="c" data-a="20">+20</td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="total-cell" data-group="five" data-row-total="8">0점</td>
-                </tr>
-                <tr data-group="five" data-row="9">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="five"
-                            data-row="9" title="5-2"><img src="images/2.png" alt="5-2"></button></td>
-                    <td class="score-cell" data-group="five" data-row="9" data-score="base" data-a="200" data-b="100">
-                        +200</td>
-                    <td class="score-cell" data-group="five" data-row="9" data-score="a" data-a="60" data-b="40">+60
-                    </td>
-                    <td class="score-cell" data-group="five" data-row="9" data-score="b" data-b="40"></td>
-                    <td class="score-cell" data-group="five" data-row="9" data-score="c" data-a="40">+40</td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="total-cell" data-group="five" data-row-total="9">0점</td>
-                </tr>
-                <tr data-group="five" data-row="10">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="five"
-                            data-row="10" title="5-3"><img src="images/3.png" alt="5-3"></button></td>
-                    <td class="score-cell" data-group="five" data-row="10" data-score="base" data-a="200">+200</td>
-                    <td class="score-cell" data-group="five" data-row="10" data-score="a" data-a="80">+80</td>
-                    <td class="empty-cell"></td>
-                    <td class="score-cell" data-group="five" data-row="10" data-score="c" data-a="80">+80</td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="total-cell" data-group="five" data-row-total="10">0점</td>
-                </tr>
-                <tr data-group="five" data-row="11">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="five"
-                            data-row="11" title="5-4"><img src="images/4-1.webp" alt="5-4"></button></td>
-                    <td class="score-cell" data-group="five" data-row="11" data-score="base" data-b="20"></td>
-                    <td class="empty-cell"></td>
-                    <td class="score-cell" data-group="five" data-row="11" data-score="b" data-b="20"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="total-cell" data-group="five" data-row-total="11">0점</td>
-                </tr>
-                <tr data-group="five" data-row="12">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="five"
-                            data-row="12" title="5-5"><img src="images/5-2.png" alt="5-5"></button></td>
-                    <td class="score-cell" data-group="five" data-row="12" data-score="base" data-a="350" data-b="240">
-                        +350</td>
-                    <td class="score-cell" data-group="five" data-row="12" data-score="a" data-a="620" data-b="320">+620
-                    </td>
-                    <td class="score-cell" data-group="five" data-row="12" data-score="b" data-b="80"></td>
-                    <td class="score-cell" data-group="five" data-row="12" data-score="c" data-a="80">+80</td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="total-cell" data-group="five" data-row-total="12">0점</td>
-                </tr>
-                <tr data-group="five" data-row="13">
-                    <td class="row-label"><button class="id-button row-button image-row-button" data-group="five"
-                            data-row="13" title="5-6"><img src="images/5-2.png" alt="5-6"></button></td>
-                    <td class="score-cell" data-group="five" data-row="13" data-score="base" data-a="400" data-b="325">
-                        +400</td>
-                    <td class="score-cell" data-group="five" data-row="13" data-score="a" data-a="600" data-b="475">+600
-                    </td>
-                    <td class="score-cell" data-group="five" data-row="13" data-score="b" data-b="90"></td>
-                    <td class="score-cell" data-group="five" data-row="13" data-score="c" data-a="100">+100</td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="empty-cell"></td>
-                    <td class="total-cell" data-group="five" data-row-total="13">0점</td>
-                </tr>
-            </tbody>
-        </table>
+            <input id="artifactCount" class="score-input" type="number" value="0"></div>
+        <div class="item-two-panel">
+            <div class="item-two-title">2번 항목: <span id="score">0점</span></div>
+            <div class="table-gradient-separator table-gradient-top"></div>
+            <table class="score-table top-table">
+                <thead>
+                    <tr>
+                        <th class="row-header"></th>
+                        <th><button class="table-button base-button active" disabled>기본</button></th>
+                        <th><button class="table-button select-button" data-group="top" data-key="a">완</button></th>
+                        <th><button class="table-button select-button" data-group="top" data-key="b"><img
+                                    src="images/망.png" alt="망"></button></th>
+                        <th><button class="table-button select-button" data-group="top" data-key="c"><img
+                                    src="images/무.png" alt="무"></button></th>
+                        <th><button class="table-button select-button" data-group="top" data-key="d"><img
+                                    src="images/흑.png" alt="흑"></button></th>
+                        <th><button class="table-button select-button" data-group="top" data-key="f"><img
+                                    src="images/의.png" alt="의"></button></th>
+                        <th><button class="table-button select-button" data-group="top" data-key="g"><img
+                                    src="images/식.png" alt="식"></button></th>
+                        <th class="total-header">합계</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-group="top" data-row="1">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-purple"
+                                data-group="top" data-row="1" title="1-1"><img src="images/1.png" alt="1-1"></button>
+                        </td>
+                        <td class="score-cell" data-group="top" data-row="1" data-score="base">-50</td>
+                        <td class="score-cell" data-group="top" data-row="1" data-score="a">+10</td>
+                        <td class="score-cell group-score" data-group="top" data-row="1" data-score="bcd" colspan="3">
+                            +40</td>
+                        <td class="score-cell group-score" data-group="top" data-row="1" data-score="fg" colspan="2">
+                            +100</td>
+                        <td class="total-cell" data-group="top" data-row-total="1">0점</td>
+                    </tr>
+                    <tr data-group="top" data-row="2">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-red"
+                                data-group="top" data-row="2" title="1-2"><img src="images/1.png" alt="1-2"></button>
+                        </td>
+                        <td class="score-cell" data-group="top" data-row="2" data-score="base">+0</td>
+                        <td class="score-cell" data-group="top" data-row="2" data-score="a">+10</td>
+                        <td class="score-cell group-score" data-group="top" data-row="2" data-score="bc" colspan="2">+50
+                        </td>
+                        <td class="empty-cell"></td>
+                        <td class="score-cell group-score" data-group="top" data-row="2" data-score="fg" colspan="2">
+                            +100</td>
+                        <td class="total-cell" data-group="top" data-row-total="2">0점</td>
+                    </tr>
+                    <tr data-group="top" data-row="3">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-purple"
+                                data-group="top" data-row="3" title="2-1"><img src="images/2.png" alt="2-1"></button>
+                        </td>
+                        <td class="score-cell" data-group="top" data-row="3" data-score="base">+60</td>
+                        <td class="score-cell" data-group="top" data-row="3" data-score="a">+80</td>
+                        <td class="score-cell group-score" data-group="top" data-row="3" data-score="bcd" colspan="3">
+                            +120</td>
+                        <td class="score-cell group-score" data-group="top" data-row="3" data-score="fg" colspan="2">
+                            +100</td>
+                        <td class="total-cell" data-group="top" data-row-total="3">0점</td>
+                    </tr>
+                    <tr data-group="top" data-row="4">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-red"
+                                data-group="top" data-row="4" title="2-2"><img src="images/2.png" alt="2-2"></button>
+                        </td>
+                        <td class="score-cell" data-group="top" data-row="4" data-score="base">+80</td>
+                        <td class="score-cell" data-group="top" data-row="4" data-score="a">+120</td>
+                        <td class="score-cell group-score" data-group="top" data-row="4" data-score="bc" colspan="2">
+                            +100</td>
+                        <td class="empty-cell"></td>
+                        <td class="score-cell group-score" data-group="top" data-row="4" data-score="fg" colspan="2">
+                            +100</td>
+                        <td class="total-cell" data-group="top" data-row-total="4">0점</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="table-gradient-separator"></div>
+            <table class="score-table middle-table">
+                <thead>
+                    <tr>
+                        <th class="row-header"></th>
+                        <th><button class="table-button base-button active" disabled>기본</button></th>
+                        <th><button class="table-button select-button" data-group="bottom" data-key="a">완</button></th>
+                        <th><button class="table-button select-button" data-group="bottom" data-key="b"><img
+                                    src="images/망.png" alt="망"></button></th>
+                        <th><button class="table-button select-button" data-group="bottom" data-key="c"><img
+                                    src="images/무.png" alt="무"></button></th>
+                        <th><button class="table-button select-button" data-group="bottom" data-key="d"><img
+                                    src="images/흑.png" alt="흑"></button></th>
+                        <th><button class="table-button select-button" data-group="bottom" data-key="f"><img
+                                    src="images/의.png" alt="의"></button></th>
+                        <th><button class="table-button select-button" data-group="bottom" data-key="g"><img
+                                    src="images/식.png" alt="식"></button></th>
+                        <th class="total-header">합계</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-group="bottom" data-row="5">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-purple"
+                                data-group="bottom" data-row="5" title="3"><img src="images/3.png" alt="3"></button>
+                        </td>
+                        <td class="score-cell" data-group="bottom" data-row="5" data-score="base">+80</td>
+                        <td class="score-cell" data-group="bottom" data-row="5" data-score="a">+160</td>
+                        <td class="empty-cell"></td>
+                        <td class="score-cell" data-group="bottom" data-row="5" data-score="c">+100</td>
+                        <td class="empty-cell"></td>
+                        <td class="score-cell group-score" data-group="bottom" data-row="5" data-score="fg" colspan="2">
+                            +100</td>
+                        <td class="total-cell" data-group="bottom" data-row-total="5">0점</td>
+                    </tr>
+                    <tr data-group="bottom" data-row="6">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-purple"
+                                data-group="bottom" data-row="6" title="4"><img src="images/4.png" alt="4"></button>
+                        </td>
+                        <td class="score-cell" data-group="bottom" data-row="6" data-score="base">+100</td>
+                        <td class="score-cell" data-group="bottom" data-row="6" data-score="a">+160</td>
+                        <td class="score-cell" data-group="bottom" data-row="6" data-score="b">+60</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="score-cell group-score" data-group="bottom" data-row="6" data-score="fg" colspan="2">
+                            +100</td>
+                        <td class="total-cell" data-group="bottom" data-row-total="6">0점</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="table-gradient-separator"></div>
+            <table class="score-table five-table">
+                <thead>
+                    <tr>
+                        <th class="row-header"></th>
+                        <th><button class="table-button base-button active" disabled>기본</button></th>
+                        <th><button class="table-button select-button" data-group="five" data-key="a">완</button></th>
+                        <th><button class="table-button select-button" data-group="five" data-key="b"><img
+                                    src="images/망.png" alt="망"></button></th>
+                        <th><button class="table-button select-button" data-group="five" data-key="c"><img
+                                    src="images/무.png" alt="무"></button></th>
+                        <th><button class="table-button select-button" data-group="five" data-key="d"><img
+                                    src="images/흑.png" alt="흑"></button></th>
+                        <th><button class="table-button select-button" data-group="five" data-key="f"><img
+                                    src="images/의.png" alt="의"></button></th>
+                        <th><button class="table-button select-button" data-group="five" data-key="g"><img
+                                    src="images/식.png" alt="식"></button></th>
+                        <th class="total-header">합계</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-group="five" data-row="7">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-purple"
+                                data-group="five" data-row="7" title="5"><img src="images/5.png" alt="5"></button></td>
+                        <td class="score-cell" data-group="five" data-row="7" data-score="base" data-any="0">+0</td>
+                        <td class="score-cell" data-group="five" data-row="7" data-score="a" data-any="20">+20</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="total-cell" data-group="five" data-row-total="7">0점</td>
+                    </tr>
+                    <tr data-group="five" data-row="8">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-red"
+                                data-group="five" data-row="8" title="5-1"><img src="images/1.png" alt="5-1"></button>
+                        </td>
+                        <td class="score-cell" data-group="five" data-row="8" data-score="base" data-a="60" data-b="20">
+                            +60</td>
+                        <td class="empty-cell"></td>
+                        <td class="score-cell" data-group="five" data-row="8" data-score="b" data-b="30"></td>
+                        <td class="score-cell" data-group="five" data-row="8" data-score="c" data-a="20">+20</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="total-cell" data-group="five" data-row-total="8">0점</td>
+                    </tr>
+                    <tr data-group="five" data-row="9">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-red"
+                                data-group="five" data-row="9" title="5-2"><img src="images/2.png" alt="5-2"></button>
+                        </td>
+                        <td class="score-cell" data-group="five" data-row="9" data-score="base" data-a="200"
+                            data-b="100">+200</td>
+                        <td class="score-cell" data-group="five" data-row="9" data-score="a" data-a="60" data-b="40">+60
+                        </td>
+                        <td class="score-cell" data-group="five" data-row="9" data-score="b" data-b="40"></td>
+                        <td class="score-cell" data-group="five" data-row="9" data-score="c" data-a="40">+40</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="total-cell" data-group="five" data-row-total="9">0점</td>
+                    </tr>
+                    <tr data-group="five" data-row="10">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-red"
+                                data-group="five" data-row="10" title="5-3"><img src="images/3.png" alt="5-3"></button>
+                        </td>
+                        <td class="score-cell" data-group="five" data-row="10" data-score="base" data-a="200">+200</td>
+                        <td class="score-cell" data-group="five" data-row="10" data-score="a" data-a="80">+80</td>
+                        <td class="empty-cell"></td>
+                        <td class="score-cell" data-group="five" data-row="10" data-score="c" data-a="80">+80</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="total-cell" data-group="five" data-row-total="10">0점</td>
+                    </tr>
+                    <tr data-group="five" data-row="11">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-red"
+                                data-group="five" data-row="11" title="5-4"><img src="images/4-1.webp"
+                                    alt="5-4"></button></td>
+                        <td class="score-cell" data-group="five" data-row="11" data-score="base" data-b="20"></td>
+                        <td class="empty-cell"></td>
+                        <td class="score-cell" data-group="five" data-row="11" data-score="b" data-b="20"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="total-cell" data-group="five" data-row-total="11">0점</td>
+                    </tr>
+                    <tr data-group="five" data-row="12">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-purple"
+                                data-group="five" data-row="12" title="5-5"><img src="images/5-2.png"
+                                    alt="5-5"></button></td>
+                        <td class="score-cell" data-group="five" data-row="12" data-score="base" data-a="350"
+                            data-b="240">+350</td>
+                        <td class="score-cell" data-group="five" data-row="12" data-score="a" data-a="620" data-b="320">
+                            +620</td>
+                        <td class="score-cell" data-group="five" data-row="12" data-score="b" data-b="80"></td>
+                        <td class="score-cell" data-group="five" data-row="12" data-score="c" data-a="80">+80</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="total-cell" data-group="five" data-row-total="12">0점</td>
+                    </tr>
+                    <tr data-group="five" data-row="13">
+                        <td class="row-label"><button class="id-button row-button image-row-button row-red"
+                                data-group="five" data-row="13" title="5-6"><img src="images/5-2.png"
+                                    alt="5-6"></button></td>
+                        <td class="score-cell" data-group="five" data-row="13" data-score="base" data-a="400"
+                            data-b="325">+400</td>
+                        <td class="score-cell" data-group="five" data-row="13" data-score="a" data-a="600" data-b="475">
+                            +600</td>
+                        <td class="score-cell" data-group="five" data-row="13" data-score="b" data-b="90"></td>
+                        <td class="score-cell" data-group="five" data-row="13" data-score="c" data-a="100">+100</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="total-cell" data-group="five" data-row-total="13">0점</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="table-gradient-separator table-gradient-bottom"></div>
+        </div>
         <div class="multiplier-panel">
             <div class="multiplier-result">3번 항목: <span id="itemThreeMultiplier">1배</span></div>
             <div class="checklist-box">
@@ -435,4 +453,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
